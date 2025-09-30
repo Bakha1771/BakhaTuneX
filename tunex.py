@@ -1,4 +1,5 @@
 import telebot
+import platform
 from yt_dlp import YoutubeDL
 import os
 import time
@@ -7,7 +8,11 @@ import tempfile
 
 TOKEN = "8001415471:AAHuicYryT-O6g-Iitt275XFyEyZ5cGW_Bs"
 bot = telebot.TeleBot(TOKEN)
-FFMPEG_PATH = r"C:\FFmpeg\bin"
+
+if platform.system() == "Windows":
+    FFMPEG_PATH = r"C:\FFmpeg\bin"
+else:
+    FFMPEG_PATH = "/home/bakha1771/ffmpeg-release-i686-static"
 
 executor = ThreadPoolExecutor(max_workers=5)
 
