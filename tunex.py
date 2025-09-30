@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 if platform.system() == "Windows":
     FFMPEG_PATH = r"C:\FFmpeg\bin"
 else:
-    FFMPEG_PATH = "/home/bakha1771/ffmpeg-release-i686-static"
+    FFMPEG_PATH = os.path.expanduser("~/ffmpeg-7.0.2-amd64-static")
 
 executor = ThreadPoolExecutor(max_workers=5)
 
